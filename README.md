@@ -1,24 +1,44 @@
-# README
+# APP-SEPH
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A live version of this app is available [here](https://app-seph.herokuapp.com/).
 
-Things you may want to cover:
+To run locally, git clone this repository and run `bundle install`. To set up the database, run `rails db:create`, `rails db:migrate` and `rails db:seed`. Use `rake` to run tests, and `rails server` to start the server and view the app on `localhost:3000`.
 
-* Ruby version
+***
 
-* System dependencies
+## Brief
 
-* Configuration
+For this exercise, we will be designing a product catalog.
 
-* Database creation
+The product catalog is a customer facing application. A typical customer will browse through several products in a same category and apply some filtering to narrow down their selection.
 
-* Database initialization
+Build web application with the following specification:
 
-* How to run the test suite
+* It stores product information, which involves a product name, description and price in SGD.
+* It provides a listing of all products through a UI
+* An admin interface should be available for configuration of products.
+* Create a simple model and respective controller(s) to present the information.
 
-* Services (job queues, cache servers, search engines, etc.)
+Do not implement anything related to authentication or product checkout as it is not part of this exercise.
 
-* Deployment instructions
+To simplify the setting up process on our end, please use:
 
-* ...
+- Ruby on Rails ~> 4.2
+
+- PostgreSQL >= 9.3
+
+You are free to use any gems or architectural support as you see fit.
+
+Your solution will be accessed based on the following criteria:
+
+1. Readability. This includes tests that well documents the behavior
+
+2. Performance
+
+3. Modularity and Separation of Concerns
+
+4. Database integrity
+
+Please share a link to the git repository with us upon completion.
+
+Happy coding!
