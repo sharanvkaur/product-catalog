@@ -1,0 +1,97 @@
+<%= render 'admin/main/header' %>
+
+<div id="notice">
+<% flash.each do |key, value| %>
+  <div class="alert alert-info" role="alert">
+    <%= value %>
+  </div>
+<% end %>
+</div>
+
+<%= link_to 'new category', new_admin_category_path, class:"btn btn-info" %>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Category Name (click to toggle)</th>
+      <th>Category ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @categories.each do |category| %>
+
+    <tr class="accordion-toggle" data-toggle="collapse" data-target="#<%= category.name %>-cores">
+      <td><%= category.name %></td>
+      <td><%= category.id %></td>
+      <td>
+        <%= link_to 'show', admin_category_path(category), class:"btn btn-sm btn-default" %>
+        <%= link_to 'edit', edit_admin_category_path(category), class:"btn btn-sm btn-warning" %>
+        <%= link_to 'delete', admin_category_path(category), method: :delete, class:"btn btn-sm btn-danger" %>
+        <%= link_to 'new SC', new_admin_category_sub_category_path(category), class:"btn btn-sm btn-info" %>
+
+      </td>
+    </tr>
+    <tr>
+      <td class="accordion-body collapse" id="<%= category.name %>-cores">
+        <table class="table table-sm">
+          <thead>
+            <th>SubCat Name (click to toggle)</th>
+            <th>SubCat ID</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+
+          <% @sub_categories.where("category_id": category.id).each do |subcategory| %>
+
+            <tr class="accordion-toggle" data-toggle="collapse" data-target="#<%= subcategory.name %>-cores">
+              <td><%= subcategory.name %></td>
+              <td><%= subcategory.id %></td>
+              <td>
+                <%= link_to 'show', admin_category_sub_category_path(category, subcategory), class:"btn btn-sm btn-default" %>
+                <%= link_to 'edit', edit_admin_category_sub_category_path(category, subcategory), class:"btn btn-sm btn-warning" %>
+                <%= link_to 'delete', admin_category_sub_category_path(category, subcategory), method: :delete, class:"btn btn-sm btn-danger" %>
+                <%= link_to 'new SSC', new_admin_category_sub_category_sub_sub_category_path(category, subcategory), class:"btn btn-sm btn-info" %>
+
+              </td>
+            </tr>
+            <tr>
+              <td class="accordion-body collapse" id="<%= subcategory.name %>-cores">
+                <table class="table table-sm">
+                  <thead>
+                    <th>SubSubCat Name</th>
+                    <th>SubSubCat ID</th>
+                    <th>Actions</th>
+                  </thead>
+                  <tbody>
+
+                    <% @sub_sub_categories.where("sub_category_id": subcategory.id).each do |subsubcategory| %>
+
+                    <tr>
+                      <td><%= subsubcategory.name %></td>
+                      <td><%= subsubcategory.id %></td>
+                      <td>
+                        <%= link_to 'show', admin_category_sub_category_sub_sub_category_path(category, subcategory, subsubcategory), class:"btn btn-sm btn-default" %>
+                        <%= link_to 'edit', edit_admin_category_sub_category_sub_sub_category_path(category, subcategory, subsubcategory), class:"btn btn-sm btn-warning" %>
+                        <%= link_to 'delete', admin_category_sub_category_sub_sub_category_path(category, subcategory, subsubcategory), method: :delete, class:"btn btn-sm btn-danger" %>
+                      </td>
+                    </tr>
+
+                  <% end %>
+
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+          <% end %>
+
+          </tbody>
+        </table>
+      </td>
+    </tr>
+<% end %>
+
+  </tbody>
+</table>

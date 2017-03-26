@@ -1,0 +1,21 @@
+<%= render 'main/header' %>
+<h1>
+<a href="/categories/<%= @category.id %>"><%= @category.name %></a> >
+<a href="/categories/<%= @category.id %>/sub_categories/<%= @sub_category.id %>"><%= @sub_category.name %></a> >
+<a href="/categories/<%= @category.id %>/sub_categories/<%= @sub_category.id %>/sub_sub_categories/<%= @sub_sub_category.id %>"><%= @sub_sub_category.name %></a> >
+<%= @product.name %>
+</h1>
+
+
+
+  <div class="col-md-12" style="background-color: white; padding: 0px 20px; margin-bottom: 10px">
+    <h1>
+      <%= @product.name %>
+        <small>
+          <%= @product.price %>
+        </small>
+    </h1>
+    <p>
+      <%= @product.description %>
+    </p>
+  </div>

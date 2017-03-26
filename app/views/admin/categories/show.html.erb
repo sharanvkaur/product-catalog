@@ -1,0 +1,21 @@
+<%= render 'admin/main/header' %>
+
+<h1>All Products with Category: <%= @category.name %></h1>
+
+
+<% @products.each do |product| %>
+<div class="col-md-4" style="padding: 0px 20px; height: 400px">
+  <h1>
+    <a href="/admin/products/<%= product.id %>" style="color: black"><%= product.name %></a>
+      <small>
+        <%= product.price %>
+      </small>
+  </h1>
+  <p>
+    <%= product.description %>
+  </p>
+
+
+</div>
+
+<% end %>

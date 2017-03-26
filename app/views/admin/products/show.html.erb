@@ -1,0 +1,24 @@
+<%= render 'admin/main/header' %>
+
+<h1>
+<a href="/admin/categories/<%= @category.id %>"><%= @category.name %></a> >
+<a href="/admin/categories/<%= @category.id %>/sub_categories/<%= @sub_category.id %>"><%= @sub_category.name %></a> >
+<a href="/admin/categories/<%= @category.id %>/sub_categories/<%= @sub_category.id %>/sub_sub_categories/<%= @sub_sub_category.id %>"><%= @sub_sub_category.name %></a> >
+<%= @product.name %>
+</h1>
+
+  <div class="col-md-12" style="background-color: white; padding: 0px 20px; margin-bottom: 10px">
+    <h1>
+      <%= @product.name %>
+        <small>
+          <%= @product.price %>
+        </small>
+    </h1>
+    <p>
+      <%= @product.description %>
+    </p>
+
+    <%= link_to 'edit', edit_admin_product_path(@product), class:"btn btn-lg" %>
+    <%= link_to 'delete', admin_product_path(@product), method: :delete, class:"btn btn-lg" %>
+
+  </div>
