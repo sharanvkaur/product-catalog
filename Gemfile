@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'seed_dump'
 
 group :test do
   gem 'rails-controller-testing', '0.1.1'
