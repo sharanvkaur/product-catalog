@@ -2,7 +2,7 @@
 
 A live version of this app is available [here](https://app-seph.herokuapp.com/).
 
-To run locally, git clone this repository and run `bundle install`. To set up the database, run `rails db:create`, `rails db:migrate` and `rails db:seed`. Use `rake` to run tests, and `rails server` to start the server and view the app on `localhost:3000`.
+To run locally, git clone this repository and run `bundle install`. Use `rake` to run tests, and `rails server` to start the server and view the app on `localhost:3000`.
 
 ***
 
