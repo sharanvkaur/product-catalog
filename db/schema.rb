@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170325085018) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", unique: true, using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170325085018) do
     t.integer  "sub_sub_category_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["name"], name: "index_products_on_name", unique: true, using: :btree
     t.index ["sub_sub_category_id"], name: "index_products_on_sub_sub_category_id", using: :btree
   end
 

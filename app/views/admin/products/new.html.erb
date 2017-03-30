@@ -3,6 +3,8 @@
 <div class="form-container" style="width: 60%">
   <h1>Create New Product</h1>
 
+  <%= @product.errors.full_messages %>
+
   <%= form_for @product, url: admin_products_path do |f| %>
 
 

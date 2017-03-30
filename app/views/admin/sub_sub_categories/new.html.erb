@@ -3,6 +3,8 @@
 <div class="form-container" style="width: 60%">
   <h1>New SubSubCategory in <%= @category.name %> > <%= @sub_category.name %></h1>
 
+  <%= @sub_sub_category.errors.full_messages %>
+
   <%= form_for @sub_sub_category, url: admin_category_sub_category_sub_sub_categories_path(params[:category_id], params[:sub_category_id]) do |f| %>
 
 

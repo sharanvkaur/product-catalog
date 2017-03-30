@@ -3,6 +3,8 @@
 <div class="form-container" style="width: 60%">
   <h1>Create New Category</h1>
 
+  <%= @category.errors.full_messages %>
+
   <%= form_for @category, url: admin_categories_path do |f| %>
 
 

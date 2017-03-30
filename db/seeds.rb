@@ -1,7 +1,7 @@
 Category.create!([
+  {name: "Makeup"},
   {name: "Skincare"},
   {name: "Hair"},
-  {name: "Makeup"},
   {name: "Tools"}
 ])
 SubCategory.create!([
